@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!doctype html>
 <html lang="en">
 
@@ -206,5 +207,33 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 <!-- custom js -->
 <script src="../../asset/js/custom.js"></script>
 
+=======
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Admin</title>
+</head>
+<body>
+	<?php 
+	session_start();
+
+	// cek apakah yang mengakses halaman ini sudah login
+	if($_SESSION['level']==""){
+		header("location:../../index.php?pesan=gagal");
+	}
+
+	?>
+	<h1>Halaman Admin</h1>
+
+	<p>Halo <b><?php echo $_SESSION['username']; ?></b> Anda telah login sebagai <b><?php echo $_SESSION['level']; ?></b>.</p>
+
+	<a href="adduser.php"><p>Tambah User</p></a>
+
+	<a href="../../logout.php">LOGOUT</a>
+
+	<br/>
+	<br/>
+	
+>>>>>>> feb00197c8a5328a536b110e95bfc648749a2f20
 </body>
 </html>

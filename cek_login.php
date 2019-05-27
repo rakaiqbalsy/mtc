@@ -3,11 +3,20 @@
 session_start();
 
 // menghubungkan php dengan koneksi database
+<<<<<<< HEAD
 include 'koneksi.php';
 
 // menangkap data yang dikirim dari form login
 $username = $_POST['username'];
 $password = $_POST['password'];
+=======
+include 'config/koneksi.php';
+
+// menangkap data yang dikirim dari form login
+// ambil data hasil submit dari form
+	$username = mysqli_real_escape_string($koneksi, stripslashes(strip_tags(htmlspecialchars(trim($_POST['username'])))));
+	$password = md5(mysqli_real_escape_string($koneksi, stripslashes(strip_tags(htmlspecialchars(trim($_POST['password']))))));
+>>>>>>> feb00197c8a5328a536b110e95bfc648749a2f20
 
 
 // menyeleksi data user dengan username dan password yang sesuai
@@ -48,6 +57,9 @@ if($cek > 0){
 	header("location:index.php?pesan=gagal");
 }
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> feb00197c8a5328a536b110e95bfc648749a2f20
 ?>
